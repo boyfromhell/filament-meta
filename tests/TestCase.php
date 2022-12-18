@@ -3,10 +3,10 @@
 namespace IchBin\Meta\Tests;
 
 use Filament\FilamentServiceProvider;
+use IchBin\Meta\MetaServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use IchBin\Meta\MetaServiceProvider;
 
 class TestCase extends Orchestra
 {
