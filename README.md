@@ -1,8 +1,6 @@
 # This is my package filament-meta
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ichbin/filament-meta.svg?style=flat-square)](https://packagist.org/packages/ichbin/filament-meta)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ichbin/filament-meta/run-tests?label=tests)](https://github.com/ichbin/filament-meta/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ichbin/filament-meta/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ichbin/filament-meta/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ichbin/filament-meta.svg?style=flat-square)](https://packagist.org/packages/ichbin/filament-meta)
 
 
@@ -43,11 +41,16 @@ return [
 ];
 ```
 
-## Usage
+## Usage Model
 
 ```php
-$filament-meta = new IchBin\Meta();
-echo $filament-meta->echoPhrase('Hello, IchBin!');
+
+use IchBin\Meta\Concerns\HasMeta;
+
+class Page extends Model
+{
+    use HasMeta;
+    
 ```
 
 ## Testing
