@@ -5,7 +5,8 @@
 
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Simple meta for filament.
+Need to install [Spatie Media library](https://spatie.be/docs/laravel-medialibrary/v10/introduction) to work.
 
 ## Installation
 
@@ -22,25 +23,6 @@ php artisan vendor:publish --tag="filament-meta-migrations"
 php artisan migrate
 ```
 
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filament-meta-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-meta-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage Model
 
 ```php
@@ -51,12 +33,6 @@ class Page extends Model
 {
     use HasMeta;
     
-```
-
-## Testing
-
-```bash
-composer test
 ```
 
 ## Changelog
