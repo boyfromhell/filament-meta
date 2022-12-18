@@ -3,7 +3,6 @@
 namespace IchBin\Meta\Components;
 
 use Filament\Forms;
-
 //use FilamentCurator\Forms as CuratorForms;
 use Illuminate\Support\Str;
 
@@ -33,7 +32,7 @@ class Meta
                         ->helperText(function (?string $state): string {
                             return Str::of(strlen($state))
                                 ->append(' / ')
-                                ->append(60 . ' ')
+                                ->append(60 .' ')
                                 ->append(str('characters')->lower())
                                 ->value();
                         })
@@ -44,7 +43,7 @@ class Meta
                         ->helperText(function (?string $state): string {
                             return Str::of(strlen($state))
                                 ->append(' / ')
-                                ->append(160 . ' ')
+                                ->append(160 .' ')
                                 ->append(str('characters')->lower())
                                 ->value();
                         })
@@ -56,9 +55,9 @@ class Meta
                 Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                     ->collection('og_image')
                     ->label('OG Image'),
-//                CuratorForms\Components\MediaPicker::make('og_image')
-//                    ->label('OG Image')
-//                    ->helperText('Leave empty to use default. This will also be used on any resources that utilizes a featured image i.e. blog posts.'),
+                //                CuratorForms\Components\MediaPicker::make('og_image')
+                //                    ->label('OG Image')
+                //                    ->helperText('Leave empty to use default. This will also be used on any resources that utilizes a featured image i.e. blog posts.'),
             ]);
     }
 }
