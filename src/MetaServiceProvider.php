@@ -13,7 +13,9 @@ class MetaServiceProvider extends PluginServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name(static::$name)
-        ->hasCommand(InstallCommand::class);
+            ->hasViews()
+            ->hasRoute('web')
+            ->hasCommand(InstallCommand::class);
     }
 
     public function packageBooted(): void
@@ -23,7 +25,7 @@ class MetaServiceProvider extends PluginServiceProvider
         parent::packageBooted();
 
         $this->publishes([
-            __DIR__.'/../database/migrations/create_filament-meta_table.php.stub' => $this->generateMigrationName('create_filament_meta_table', $now->addSecond()),
+            __DIR__ . '/../database/migrations/create_filament-meta_table.php.stub' => $this->generateMigrationName('create_filament_meta_table', $now->addSecond()),
         ], 'filament-meta-migrations');
     }
 }

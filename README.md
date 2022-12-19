@@ -22,6 +22,10 @@ You can publish and run the migrations with:
 php artisan vendor:publish --tag="filament-meta-migrations"
 php artisan migrate
 ```
+Optionally, you can publish the views using
+```bash
+php artisan vendor:publish --tag="filament-meta-views"
+```
 
 ## Usage Model
 
@@ -33,6 +37,17 @@ class Page extends Model
 {
     use HasMeta;
     
+```
+
+## Usage Filament resource
+```php
+use IchBin\Meta\Components\Meta;
+use Filament\Resources\Pages\EditRecord;
+
+
+Meta::make()
+                    ->collapsed(fn ($livewire) => $livewire instanceof EditRecord)
+                    ->collapsible(),
 ```
 
 ## Changelog

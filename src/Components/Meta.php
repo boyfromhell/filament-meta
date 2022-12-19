@@ -3,7 +3,6 @@
 namespace IchBin\Meta\Components;
 
 use Filament\Forms;
-//use FilamentCurator\Forms as CuratorForms;
 use Illuminate\Support\Str;
 
 class Meta
@@ -15,13 +14,10 @@ class Meta
             ->relationship('meta')
             ->saveRelationshipsUsing(function ($component, $state) {
                 $record = $component->getCachedExistingRecord();
-                //$state['og_image'] = isset($state['og_image']) ? $state['og_image'] : null;
                 if ($record) {
                     $record->update($state);
-
                     return;
                 }
-
                 $component->getRelationship()->create($state);
             })
             ->columns(['md' => 2])
@@ -55,9 +51,6 @@ class Meta
                 Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                     ->collection('og_image')
                     ->label('OG Image'),
-                //                CuratorForms\Components\MediaPicker::make('og_image')
-                //                    ->label('OG Image')
-                //                    ->helperText('Leave empty to use default. This will also be used on any resources that utilizes a featured image i.e. blog posts.'),
             ]);
     }
 }
